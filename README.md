@@ -10,17 +10,25 @@ O **Brito Recipes** é uma interface moderna e imersiva projetada para a descobe
 
 A plataforma consome dados em tempo real diretamente da TheMealDB, entregando informações detalhadas sobre pratos do mundo todo com uma performance fluida e design impactante 🍽️
 
-# ✨ Destaques de Elite
+## ✨ Destaques de Elite
 
-- Design Dark Futurista: Interface baseada em tons de preto profundo com acentos em laranja e roxo neon 🌌
+| Recurso | Impacto Visual |
+| :--- | :--- |
+| **Dark Futurista** | Interface em tons de preto profundo com acentos neon 🌌 |
+| **Glassmorphism** | Containers translúcidos com efeito backdrop blur ✨ |
+| **Typo Vanguarda** | Uso das fontes *Syne* e *Space Grotesk* 🖋️ |
+| **Busca Inteligente** | Sistema assíncrono de consulta instantânea 🔍 |
+| **Mobile-First** | UI otimizada para dispositivos de luxo 📱 |
 
-- Glassmorphism Puro: Containers com desfoque de fundo e bordas translúcidas para um aspecto premium ✨
+# 🎨 Design System 
 
-- Tipografia de Vanguarda: Uso das fontes Syne e Space Grotesk para uma leitura técnica e limpa 🖋️
-
-- Busca Inteligente: Sistema de consulta assíncrona que retorna resultados instantâneos e precisos 🔍
-
-- Mobile First: Totalmente otimizado para uma experiência de luxo em qualquer dispositivo 📱
+| Elemento | Especificação Técnica | Impacto Visual |
+| :--- | :--- | :--- |
+| **Cores Primárias** | `Black #000000` / `Orange #FF5F00` | Sofisticação e contraste 🌌 |
+| **Acento Cyber** | `Purple #8A2BE2` | Profundidade futurista 💎 |
+| **Títulos** | `Syne (Extra Bold)` | Presença bruta e moderna 🖋️ |
+| **Corpo** | `Space Grotesk` | Leitura técnica e limpa 🚀 |
+| **Efeitos** | `Backdrop Blur (20px)` | Estética Glassmorphism ✨ |
 
 # 🛠️ Tecnologias de Ponta
 
@@ -52,16 +60,24 @@ cd Brito-Recipes
 ## 📡 Integração com a API TheMealDB
 O Brito Recipes consome os endpoints oficiais para garantir um catálogo vasto e atualizado 🍱:
 
-- Busca Global: Consulta por termos específicos através do parâmetro s 🍜.
+| Funcionalidade | Endpoint / Parâmetro | Descrição |
+| :--- | :--- | :--- |
+| **Busca Global** | `s` (Search) | Consulta por termos específicos e nomes de pratos 🍜 |
+| **Identificação** | `strMeal` | Extração do nome oficial do prato 🍲 |
+| **Visual** | `strMealThumb` | Renderização de imagem em alta resolução 📸 |
+| **Classificação** | `strCategory` | Organização por categoria gastronômica 🥗 |
+| **Geolocalização** | `strArea` | Mapeamento da origem cultural da receita 🏳️ |
 
-- Mapeamento de Dados: O sistema extrai e organiza automaticamente os campos essenciais:
+## 🏁 Conclusão
 
-- strMeal: Nome do prato 🍲
+O **Brito-Recipes** prova que performance e estética de elite podem caminhar juntas. Um projeto desenvolvido com foco em **Clean Code** e uma interface **Cyber-Luxury**, entregando o máximo com o mínimo de complexidade.
 
-- strMealThumb: Imagem em alta resolução 📸
+---
 
-- strCategory: Categoria gastronômica 🥗
-  
-- strArea: Origem cultural da receita 🏳️
+| Pilar | Entrega |
+| :--- | :--- |
+| **Performance** | JavaScript Puro e ultraveloz ⚡ |
+| **Design** | Estética de vanguarda e imersiva 💎 |
+| **Futuro** | Base sólida para evolução (V2) 🚀 |
 
-- Async Performance: Implementação de chamadas assíncronas que garantem uma navegação fluida e sem interrupções 🚀
+---
