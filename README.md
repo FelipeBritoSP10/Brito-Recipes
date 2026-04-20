@@ -1,4 +1,4 @@
-## Brito-Recipes 🥘
+# 🥘 Brito-Recipes
 
 Uma plataforma premium de receitas gastronômicas de elite, com design futurista e integração inteligente via TheMealDB API.
 
