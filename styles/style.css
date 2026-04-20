@@ -1,0 +1,53 @@
+:root {
+    --orange-neon: #ff5f00;
+    --purple-neon: #8a2be2;
+}
+
+body { 
+    font-family: 'Space Grotesk', sans-serif; 
+    background-color: #000000;
+    color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+.font-brutal { 
+    font-family: 'Syne', sans-serif; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.badge-tech {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+}
+
+.btn-neon {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-family: 'Syne', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-neon:hover {
+    background: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}

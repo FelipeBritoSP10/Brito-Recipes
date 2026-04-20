@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brito Recipe | Elite Gastronomy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+ <body class="overflow-x-hidden antialiased">
+
+    <div class="fixed top-[-10%] left-[-10%] w-[400px] h-[400px] bg-[var(--orange-neon)] opacity-10 rounded-full blur-[120px] -z-10">
+    </div>
+
+    <div class="fixed bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-[var(--purple-neon)] opacity-10 rounded-full blur-[120px] -z-10">
+    </div>
+
+    <nav class="fixed top-0 w-full z-[100] px-4 py-3">
+        <div class="max-w-7xl mx-auto glass rounded-2xl px-5 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-1.5 h-5 bg-[var(--orange-neon)] rounded-full"></div>
+                <h1 class="font-brutal text-[22px] tracking-tighter text-white">Brito
+                    <span class="text-[var(--orange-neon)]">.</span>Recipes
+                </h1>
+            </div>
+            <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-[0.2em] text-white">
+                <a href="#" class="hover:text-[var(--orange-neon)] transition">Explorar</a>
+                <a href="#services" class="hover:text-[var(--orange-neon)] transition">Serviços</a>
+                <a href="#" class="hover:text-[var(--orange-neon)] transition">Sobre</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-12 px-5 text-center">
+        <span class="badge-tech mb-8">Plataforma Gastronômica de Vanguarda</span>
+        <h2 class="font-brutal text-[3.4rem] sm:text-[4rem] md:text-[5.6rem] lg:text-[6.2rem] leading-[0.85] tracking-[-0.05em] text-white mb-10">
+        Sabor <span class="text-[var(--orange-neon)]">Elite</span>
+        </h2>
+
+        <p class="max-w-md mx-auto text-[17px] font-light leading-tight text-white/90 mb-12"> Culinária de elite. Experiências extraordinárias.
+        </p>
+
+        <div class="max-w-lg w-full relative mb-24">
+            <input type="text" id="searchInput" placeholder="Digite um alimento ou ingrediente..."
+            class="w-full bg-black/70 border border-white/30 rounded-3xl py-5 pl-6 pr-16 outline-none focus:border-[var(--orange-neon)] transition-all text-base text-white">
+            <button id="searchButton"
+                class="absolute right-3 top-1/2 -translate-y-1/2 bg-[var(--orange-neon)] p-4 rounded-2xl hover:scale-105 active:scale-95 transition-all">
+                <svg width="20" height="20" fill="none" stroke="#ffffff" stroke-width="3.5" viewBox="0 0 24 24">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="resultados" class="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+        </div>
+    </header>
+
+<script type="module" src="./scripts/main.js"></script>
+
+</body>
+</html>
