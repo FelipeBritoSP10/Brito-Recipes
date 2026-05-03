@@ -1,49 +1,72 @@
-import { RecipeService } from './services/recipeService.js';
+import { RecipeService } from './services/RecipeService.js';
 
-const input = document.querySelector('#searchInput');
-const button = document.querySelector('#searchButton');
-const container = document.querySelector('#resultados');
+let swiperInstance = null;
 
-async function searchEngine() {
-    const query = input.value.trim();
-    
-    if (!query) {
-        container.innerHTML = `<p class="col-span-full opacity-40 font-brutal">Aguardando entrada...</p>`;
-        return;
-    }
+// Initialize o Swiper conform necessary
+function setupSwiper() {
+    if (swiperInstance) swiperInstance.destroy(true, true);
 
-    container.innerHTML = `<div class="col-span-full animate-pulse text-[var(--orange-neon)] font-brutal">Brito Engine: Localizando Dados...</div>`;
+    swiperInstance = new Swiper('.swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        grabCursor: true,
+        breakpoints: {
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        }
+    });
+}
+async function renderRecipes() {
+    const query = document.getElementById('searchInput').value;
+    const container = document.getElementById('resultados');
+    const swiperEl = document.getElementById('swiper-container');
+
+    if (!query) return;
 
     try {
         const meals = await RecipeService.fetchRecipes(query);
-        renderResults(meals);
-    } catch (error) {
-        container.innerHTML = `<p class="col-span-full text-red-500">Erro crítico na Engine. Tente novamente.</p>`;
+
+        container.innerHTML = '';
+        swiperEl.classList.remove('opacity-0');
+
+        if (meals.length === 0) {
+            container.innerHTML = '<p class="w-full text-center text-white/40">Nenhum resultado encontrado.</p>';
+            return;
+        }
+
+        meals.forEach(meal => {
+            const slide = document.createElement('div');
+            slide.className = 'swiper-slide h-auto';
+            slide.innerHTML = `
+                <div class="glass p-6 rounded-[2.5rem] border border-white/5 hover:border-[var(--orange-neon)]/30 transition-all duration-500 group h-full flex flex-col">
+                    <div class="overflow-hidden rounded-[1.8rem] mb-6 aspect-square">
+                        <img src="${meal.strMealThumb}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <span class="text-[var(--orange-neon)] text-[10px] uppercase font-bold tracking-widest mb-2">${meal.strArea}</span>
+                    <h3 class="text-xl font-bold mb-4 line-clamp-1">${meal.strMeal}</h3>
+                    <div class="mt-auto">
+                        <a href="${meal.strYoutube}" target="_blank" class="block text-center w-full py-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white hover:text-black transition-all text-xs font-bold uppercase tracking-widest">
+                            Assistir Tutorial
+                        </a>
+                    </div>
+                </div>
+            `;
+            container.appendChild(slide);
+        });
+
+        setupSwiper();
+
+    } catch (err) {
+        console.error(err);
     }
 }
 
-function renderResults(meals) {
-    if (meals.length === 0) {
-        container.innerHTML = `<p class="col-span-full opacity-40">Nenhum registro elite encontrado.</p>`;
-        return;
-    }
-
-    container.innerHTML = meals.map(meal => `
-        <div class="glass rounded-[2rem] overflow-hidden group transition-all hover:border-[var(--orange-neon)]">
-            <div class="relative h-64 overflow-hidden">
-                <img src="${meal.strMealThumb}" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                <div class="absolute top-4 right-4 badge-tech bg-black/60 backdrop-blur-md">${meal.strArea}</div>
-            </div>
-            <div class="p-8 text-left">
-                <span class="text-[var(--orange-neon)] text-[10px] uppercase tracking-[0.3em] font-bold">${meal.strCategory}</span>
-                <h3 class="font-brutal text-xl mt-2 mb-6 line-clamp-1 text-white">${meal.strMeal}</h3>
-                <button class="btn-neon w-full">Explorar Receita</button>
-            </div>
-        </div>
-    `).join('');
-}
-
-button.addEventListener('click', searchEngine);
-input.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') searchEngine();
+// Events
+document.getElementById('searchButton').addEventListener('click', renderRecipes);
+document.getElementById('searchInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') renderRecipes();
 });
