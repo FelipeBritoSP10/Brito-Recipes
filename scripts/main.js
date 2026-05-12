@@ -1,4 +1,4 @@
-import { RecipeService } from './services/RecipeService.js';
+import { RecipeService } from './services/recipeService.js';
 
 let swiperInstance = null;
 
