@@ -68,6 +68,12 @@ O Brito Recipes consome os endpoints oficiais para garantir um catálogo vasto e
 | **Classificação** | `strCategory` | Organização por categoria gastronômica 🥗 |
 | **Geolocalização** | `strArea` | Mapeamento da origem cultural da receita 🏳️ |
 
+## 🔗 Deployment & Preview
+
+Acesse o **deploy** principal através da nossa infraestrutura de borda:
+
+Projeto no ar: https://brito-recipes.vercel.app/
+
 ## 🏁 Conclusão
 
 O **Brito-Recipes** prova que performance e estética de elite podem caminhar juntas. Um projeto desenvolvido com foco em **Clean Code** e uma interface **Cyber-Luxury**, entregando o máximo com o mínimo de complexidade.
